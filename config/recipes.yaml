@@ -1,0 +1,11 @@
+# Manual scrape recipes for companies the ATS Resolver cannot auto-resolve
+# (flagged "Needs manual recipe" in the Companies DB).
+#
+# Format:
+#   Company Name:
+#     url: https://careers.example.com/jobs
+#     job_selector: "css selector for each job card"
+#     title_selector: "css selector for title within card"
+#     link_selector: "css selector for link within card"
+#     render_js: false          # true -> use Playwright (must be installed)
+recipes: {}

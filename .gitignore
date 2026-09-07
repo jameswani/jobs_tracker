@@ -1,0 +1,12 @@
+.env
+.venv/
+output/
+data/
+__pycache__/
+*.pyc
+logs/
+# Personal workspace data and credentials
+config/profile.yaml
+config/notion_ids.yaml
+*.xlsx
+~$*

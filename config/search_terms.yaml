@@ -1,0 +1,96 @@
+# Per-track title keywords. A posting is kept if its title matches any track's
+# include terms and no global exclude term. Matching is case-insensitive,
+# word-boundary regex.
+tracks:
+  swe:
+    label: "Software Engineering"
+    resume: "Software Engineering Resume V1"
+    include:
+      - software engineer
+      - software developer
+      - full stack
+      - full-stack
+      - backend engineer
+      - back end engineer
+      - frontend engineer
+      - front end engineer
+      - mobile engineer
+      - mobile developer
+      - ios engineer
+      - android engineer
+      - platform engineer
+      - infrastructure engineer
+      - site reliability
+      - swe
+  product:
+    label: "Product Management"
+    resume: "Software Engineering Resume V1"   # PM variant not yet generated
+    include:
+      - product manager
+      - associate product manager
+      - technical program manager
+      - program manager
+      - product analyst
+      - apm
+      - tpm
+  quant:
+    label: "Quantitative Finance"
+    resume: "Quant Resume V1"
+    include:
+      - quantitative researcher
+      - quantitative analyst
+      - quantitative developer
+      - quantitative trader
+      - quant researcher
+      - quant analyst
+      - quant developer
+      - quant trader
+      - trading analyst
+      - execution analyst
+      - research analyst
+  ib:
+    label: "Investment Banking"
+    resume: "Investment Banking Resume V1"
+    include:
+      - investment banking analyst
+      - investment banking
+      - m&a analyst
+      - mergers and acquisitions
+      - capital markets analyst
+      - corporate finance analyst
+      - leveraged finance
+  fintech:
+    label: "FinTech"
+    resume: "FinTech Resume V1"
+    include:
+      - fintech
+      - payments engineer
+      - payments product
+      - financial engineer
+  data_ml:
+    label: "Data / ML"
+    resume: "Software Engineering Resume V1"
+    include:
+      - data scientist
+      - machine learning engineer
+      - ml engineer
+      - data engineer
+      - data analyst
+      - ai engineer
+
+# Titles containing any of these are dropped before scoring (seniority mismatch).
+global_exclude:
+  - senior
+  - "sr."
+  - staff
+  - principal
+  - director
+  - vice president
+  - " vp "
+  - head of
+  - chief
+  - distinguished
+  - executive
+  - "10+ years"
+  - "8+ years"
+  - "7+ years"

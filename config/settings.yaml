@@ -1,0 +1,70 @@
+# Core pipeline settings. Notion database IDs point at the existing
+# "Career Command Center" template databases.
+notion:
+  command_center_page: "52817e92-7e79-47b2-bbd1-32b4eb1c7482"
+  databases:
+    opportunities: "3710eeb6-e01a-8014-9ef0-e8093c1492c3"
+    companies: "3710eeb6-e01a-8061-ba35-d9b52051f24b"
+    documents: "3710eeb6-e01a-8089-9941-cd6eb3f2f9ff"
+    crm: "3710eeb6-e01a-8066-824b-eb6f0a7361da"
+    interviews: "3710eeb6-e01a-801f-b457-e220a8d901f4"
+    applications: "3710eeb6-e01a-8060-b25e-d22e4ece945a"
+  # Filled in by scripts/upgrade_notion_schema.py (metrics DB, digest/health pages)
+  generated_ids_file: "config/notion_ids.yaml"
+
+llm:
+  provider: "openai"         # openai | anthropic | ollama
+  scoring_model: "gpt-5.4-mini"
+  documents_model: "gpt-5.5"
+  scoring_max_tokens: 1024
+  documents_max_tokens: 8192
+  ollama_host: "http://localhost:11434" # only used when provider: ollama
+
+discovery:
+  max_jobs_per_company: 5   # keep at most the first N matching postings per company per run
+
+position_search:
+  enabled: true
+  max_total_results: 120
+  results_per_query: 20
+  locations: ["New York", "Remote", "United States"]
+  queries:
+    - "IT business analyst"
+    - "technology analyst"
+    - "finance systems analyst"
+    - "financial analyst"
+    - "product analyst payments"
+    - "data analyst fintech"
+    - "risk analyst fintech"
+    - "AI business analyst"
+    - "Business Analyst"
+    - "Technology Analyst"
+    - "Product Analyst"
+    - "Financial Analyst"
+    - "Finance Systems Analyst"
+    - "Risk Analyst"
+    - "Data Analyst"
+    - "Payments Analyst"
+    - "Business Systems Analyst"
+    - "Implementation Analyst"
+    - "Strategy Analyst"
+    - "Quantitative Analyst"
+    - "Corporate Finance Analyst"
+    - "Treasury Analyst"
+    - "AI/ML Business Analyst"
+
+scoring:
+  shortlist_threshold: 70    # >= auto-Shortlisted
+  screen_out_threshold: 40   # <  auto-Screened Out
+  llm_batch_limit: 60        # max LLM scorings per pipeline run (cost guard)
+
+tracking:
+  ghosted_after_days: 14
+  verify_urls: true
+
+crm:
+  default_cadence_days: 21
+
+paths:
+  db: "data/pipeline.db"
+  output: "output"
